@@ -1,0 +1,203 @@
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Oracle
+python3 main.py --run_name val_seen_replan_oracle_eccv_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states --save_imgs
+python3 main.py --run_name val_seen_replan_oracle_no_visual_feedback_eccv_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states --save_imgs
+python3 main.py --run_name val_seen_eccv_replan_oracle_minigptv1_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states --save_imgs
+# FILM
+python3 main.py --run_name eccv_replan_film --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner no_replan --navigator_gpu 0 --interactor_gpu 0 --debug --film_use_stop_analysis --subdataset_type changing_states
+python3 main.py --run_name eccv_film_replan_images_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --film_use_stop_analysis --subdataset_type changing_states
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Imperfect chekers
+python3 main.py --run_name eccv_rebutal_oracle_with_noise80_no_seen_debug_v3_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle_with_noise --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --interaction_only_checker --checker_correctness_prob 0.8
+python3 main.py --run_name eccv_rebutal_oracle_with_noise90_no_debug_seen_v3_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle_with_noise --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --interaction_only_checker --checker_correctness_prob 0.9
+python3 main.py --run_name eccv_rebutal_oracle_with_noise95_no_debug_seen_v3_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle_with_noise --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --interaction_only_checker --checker_correctness_prob 0.95
+python3 main.py --run_name eccv_rebutal_oracle_film_check_seen_v3_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker frames_diff_based --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states
+
+
+python3 main.py --run_name eccv_rebutal_oracle_with_noise80_no_unseen_debug_v3_0_819 --from_idx 0 --to_idx 819 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle_with_noise --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --interaction_only_checker --checker_correctness_prob 0.8
+python3 main.py --run_name eccv_rebutal_oracle_with_noise90_no_debug_unseen_v3_0_819 --from_idx 0 --to_idx 819 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle_with_noise --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --interaction_only_checker --checker_correctness_prob 0.9
+python3 main.py --run_name eccv_rebutal_oracle_with_noise95_no_debug_unseen_v3_0_819 --from_idx 0 --to_idx 819 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle_with_noise --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --interaction_only_checker --checker_correctness_prob 0.95
+python3 main.py --run_name eccv_rebutal_oracle_film_check_unseen_v3_0_819 --from_idx 0 --to_idx 819 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker frames_diff_based --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states
+
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix eccv_rebutal_oracle_with_noise80_no_unseen_debug_v3
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix eccv_rebutal_oracle_with_noise90_no_debug_unseen_v3
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix eccv_rebutal_oracle_with_noise95_no_debug_unseen_v3
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix eccv_rebutal_oracle_film_check_unseen_v3
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix eccv_rebutal_oracle_with_noise85_no_debug_unseen
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# AAAI FILM + ERA experiments series
+python3 main.py --run_name aaai_oracle_era_unseen_0_819 --from_idx 0 --to_idx 819 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker frames_diff_based --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --interaction_only_checker
+python3 main.py --run_name aaai_film_lera_unseen_0_819 --from_idx 0 --to_idx 819 --split valid_unseen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model oracle --checker frames_diff_based --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --interaction_only_checker
+
+# FILM
+python3 main.py --run_name aaai_film_no_replan_unseen_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner no_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name aaai_film_with_replan_unseen_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --debug --film_use_stop_analysis
+
+# ERa
+python3 main.py --run_name aaai_oracle_era_unseen_oracle_checker_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states
+
+# Oracle + PC
+python3 main.py --run_name aaai_oracle_pc_unseen --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --allow_retry_nav_for_oracle_nav --interactor advanced_seg_based --seg_model oracle --checker oracle --planner no_replan --navigator_gpu 1 --interactor_gpu 1                                                                                                                                                                                                                                                                                                                                                                                                                          --subdataset_type changing_states                                                                                                                                                                                                                                                                                                                                                                                                                           --debug
+
+
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix aaai_film_no_replan_unseen
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Sber robotics demo
+python3 main.py --run_name sber_oracle_replan_seen_all_img_v2_12_819 --from_idx 12 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states --save_imgs
+python3 main.py --run_name sber_oracle_no_replan_seen_all_img_v2_12_819 --from_idx 12 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner no_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states --save_imgs
+python3 main.py --run_name sber_oracle_replan_seen_aboba_12_12 --from_idx 12 --to_idx 12 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states --save_imgs
+
+
+unzip ~/work/eai_fiqa/.ai2thor/thor-201909061227-Linux64.zip -d ~/work/eai_fiqa/.ai2thor
+unzip ~/work/eai_fiqa/alfred_utils/data/json_2.1.0.zip -d ~/work/eai_fiqa/alfred_utils/data/json_2.1.0
+unzip ~/work/eai_fiqa/fiqa/checkpoints/Pretrained_Models_FILM.zip -d ~/work/eai_fiqa/fiqa/checkpoints
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# AAAI Rebutal
+# Oracle + LLaVA-Onevision
+python3 main.py --run_name rebut_oracle_seen_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+python3 main.py --run_name rebut_oracle_unseen_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+
+python3 -m utils.get_stats --split valid_seen --run_name_prefix rebut_oracle_seen
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix rebut_oracle_unseen
+
+
+# Debug
+python3 main.py --run_name val_seen_debug_40_50 --from_idx 40 --to_idx 50 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# IJCAI 2025 
+# Oracle + GPT-4o
+python3 main.py --run_name ijcai_oracle_seen_gpt4o_old_prompts_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+python3 main.py --run_name ijcai_oracle_unseen_gpt4o_old_prompts_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+
+# Oracle + GPT-4o-mini
+python3 main.py --run_name ijcai_oracle_seen_gpt4o_mini_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+python3 main.py --run_name ijcai_oracle_unseen_gpt4o_mini_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+
+# Oracle + gemini-pro
+python3 main.py --run_name ijcai_oracle_seen_gemini_pro_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+python3 main.py --run_name ijcai_oracle_unseen_gemini_pro_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+
+# Oracle + gemini-flash
+python3 main.py --run_name ijcai_oracle_seen_gemini_flash_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+python3 main.py --run_name ijcai_oracle_unseen_gemini_flash_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_oracle_seen_gpt4o_mini
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_oracle_unseen_gpt4o_mini
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_oracle_seen_gemini_pro
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_oracle_unseen_gemini_pro
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_oracle_seen_gemini_flash
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_oracle_unseen_gemini_flash
+
+
+# FILM + GPT-4o
+python3 main.py --run_name ijcai_film_seen_gpt4o_old_prompts_0_99 --from_idx 0 --to_idx 99 --split valid_seen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_seen_gpt4o_old_prompts_100_199 --from_idx 100 --to_idx 199 --split valid_seen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_seen_gpt4o_old_prompts_200_299 --from_idx 200 --to_idx 299 --split valid_seen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_seen_gpt4o_old_prompts_300_399 --from_idx 300 --to_idx 399 --split valid_seen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_seen_gpt4o_old_prompts_400_499 --from_idx 400 --to_idx 499 --split valid_seen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_seen_gpt4o_old_prompts_500_599 --from_idx 500 --to_idx 599 --split valid_seen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 1 --interactor_gpu 1 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_seen_gpt4o_old_prompts_600_699 --from_idx 600 --to_idx 699 --split valid_seen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 1 --interactor_gpu 1 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_seen_gpt4o_old_prompts_700_760 --from_idx 700 --to_idx 760 --split valid_seen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 1 --interactor_gpu 1 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_seen_gpt4o_old_prompts_761_819 --from_idx 761 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 1 --interactor_gpu 1 --subdataset_type changing_states --debug --film_use_stop_analysis
+
+
+python3 main.py --run_name ijcai_film_unseen_gpt4o_old_prompts_0_99 --from_idx 0 --to_idx 99 --split valid_unseen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 1 --interactor_gpu 1 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_unseen_gpt4o_old_prompts_100_199 --from_idx 100 --to_idx 199 --split valid_unseen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 1 --interactor_gpu 1 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_unseen_gpt4o_old_prompts_200_299 --from_idx 200 --to_idx 299 --split valid_unseen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 1 --interactor_gpu 1 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_unseen_gpt4o_old_prompts_300_399 --from_idx 300 --to_idx 399 --split valid_unseen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 1 --interactor_gpu 1 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_unseen_gpt4o_old_prompts_400_499 --from_idx 400 --to_idx 499 --split valid_unseen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 2 --interactor_gpu 2 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_unseen_gpt4o_old_prompts_500_599 --from_idx 500 --to_idx 599 --split valid_unseen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 2 --interactor_gpu 2 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_unseen_gpt4o_old_prompts_600_699 --from_idx 600 --to_idx 699 --split valid_unseen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 2 --interactor_gpu 2 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_unseen_gpt4o_old_prompts_700_760 --from_idx 700 --to_idx 760 --split valid_unseen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 2 --interactor_gpu 2 --subdataset_type changing_states --debug --film_use_stop_analysis
+python3 main.py --run_name ijcai_film_unseen_gpt4o_old_prompts_761_820 --from_idx 761 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator film --interactor advanced_seg_based --seg_model maskrcnn --checker frames_diff_based --planner with_replan --navigator_gpu 2 --interactor_gpu 2 --subdataset_type changing_states --debug --film_use_stop_analysis
+
+
+# Oracle + Gemini (проверь настроены ли промпты для неё)
+python3 main.py --run_name ijcai_oracle_seen_gemini_old_prompts_15_819 --from_idx 15 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+python3 main.py --run_name ijcai_oracle_unseen_gemini_old_prompts_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+
+
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_oracle_seen_gpt4o
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_oracle_unseen_gpt4o
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_film_seen_gpt4o
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_film_unseen_gpt4o
+
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_oracle_seen_gpt4o_old_prompts
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_oracle_unseen_gpt4o_old_prompts 
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_film_seen_gpt4o_old_prompts
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_film_unseen_gpt4o_old_prompts
+
+# Oracle + GPT-4o + LRa
+# WARNING: to set predicting steps go to fiqa/task_handlers/subtask_manager.py and change predict_steps to "ler" / "lr" etc.
+python3 main.py --run_name ijcai_oracle_seen_gpt4o_lra_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+python3 main.py --run_name ijcai_oracle_unseen_gpt4o_lra_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+# Ra
+python3 main.py --run_name ijcai_oracle_seen_gpt4o_ra_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+python3 main.py --run_name ijcai_oracle_unseen_gpt4o_ra_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+# ERa
+python3 main.py --run_name ijcai_oracle_seen_gpt4o_era_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+python3 main.py --run_name ijcai_oracle_unseen_gpt4o_era_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_oracle_seen_gpt4o_era
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_oracle_unseen_gpt4o_era
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_oracle_seen_gpt4o_lra
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_oracle_unseen_gpt4o_lra
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_oracle_seen_gpt4o_ra
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_oracle_unseen_gpt4o_ra
+
+
+# Oracle + Llamas
+python3 main.py --run_name ijcai_oracle_seen_llama_11b_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+python3 main.py --run_name ijcai_oracle_unseen_llama_11b_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+
+python3 main.py --run_name ijcai_oracle_seen_llama_90b_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+python3 main.py --run_name ijcai_oracle_unseen_llama_90b_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+
+
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_oracle_seen_llama_11b
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_oracle_unseen_llama_11b
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_oracle_seen_llama_90b
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_oracle_unseen_llama_90b
+
+# Just oracle
+python3 main.py --run_name ijcai_oracle_seen_no_replan_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner no_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+python3 main.py --run_name ijcai_oracle_unseen_no_replan_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner no_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_oracle_seen_no_replan
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_oracle_unseen_no_replan
+
+# Lera baseline
+python3 main.py --run_name ijcai_lera_baseline_seen_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+python3 main.py --run_name ijcai_lera_baseline_unseen_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+
+python3 main.py --run_name ijcai_lera_baseline_seen_gpt4o_0_819 --from_idx 0 --to_idx 819 --split valid_seen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+python3 main.py --run_name ijcai_lera_baseline_unseen_gpt4o_0_820 --from_idx 0 --to_idx 820 --split valid_unseen --instr_type film --use_gt_instrs --navigator oracle --interactor advanced_seg_based --seg_model oracle --checker oracle --planner with_replan --navigator_gpu 0 --interactor_gpu 0 --debug --subdataset_type changing_states
+
+
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_lera_baseline_seen
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_lera_baseline_unseen
+python3 -m utils.get_stats --split valid_seen --run_name_prefix ijcai_lera_baseline_seen_gpt4o
+python3 -m utils.get_stats --split valid_unseen --run_name_prefix ijcai_lera_baseline_unseen_gpt4o
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Useful commands
+bash
+source fiqa_venv/bin/activate
+export CUBLAS_WORKSPACE_CONFIG=:4096:8
+
+python3 docker/check_thor.py

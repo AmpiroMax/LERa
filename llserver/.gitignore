@@ -1,0 +1,101 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg
+*.egg-info/
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook files
+.ipynb_checkpoints
+
+# Environment files
+.env
+.env.*
+.venv
+
+# Pyre type checker
+.pyre/
+
+# Mypy type checker
+.mypy_cache/
+
+# Pylint
+pylint.log
+
+# Pyright
+.pyright/
+
+# VS Code workspace and settings
+.vscode/
+
+# PyCharm
+.idea/
+
+# Mac OS metadata files
+.DS_Store
+
+# Windows Thumbs.db files
+Thumbs.db
+
+# SQLite database
+*.sqlite3
+
+# Temporary files
+*.log
+*.bak
+*.swp
+*.tmp
+
+# Editor backup files
+*~
+
+# Ignore virtualenvs and Python environments
+pyvenv.cfg
+
+# Logs
+*logs
+
+# Data
+*data
+
+# HF Models
+models/hub*
+models/modules*

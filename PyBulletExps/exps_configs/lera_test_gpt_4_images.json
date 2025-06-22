@@ -1,0 +1,15 @@
+{
+    "experiment_name": "test_gpt4o_all_4_images",
+    "tasks_from": 1,
+    "tasks_to": 10,
+    "runs_per_task": 10,
+    "model_name": "gpt-4o",
+    "images_to_use": 4,
+    "images_step": 29,
+    "drop_prob": [
+        0,
+        0.5
+    ],
+    "do_replan": true,
+    "save_video": true
+}

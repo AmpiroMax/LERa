@@ -1,0 +1,7 @@
+fastapi==0.115.2
+asyncio==3.4.3
+uvicorn==0.32.0
+wandb==0.18.3
+python-multipart==0.0.12
+docker==7.1.0
+docker-pycreds==0.4.0

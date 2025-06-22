@@ -1,0 +1,16 @@
+{
+    "experiment_name": "baseline_test_gpt4o",
+    "replanning_model": "lera_baseline",
+    "tasks_from": 1,
+    "tasks_to": 10,
+    "runs_per_task": 10,
+    "model_name": "gpt-4o",
+    "images_to_use": 1,
+    "images_step": 1,
+    "drop_prob": [
+        0,
+        0.5
+    ],
+    "do_replan": true,
+    "save_video": true
+}

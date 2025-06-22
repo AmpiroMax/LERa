@@ -1,0 +1,28 @@
+{
+    "models": {
+        "4d956ff3-a2bf-467b-aa80-10fd6cafc5b1": {
+            "model_name": "lera_api",
+            "model_id": "4d956ff3-a2bf-467b-aa80-10fd6cafc5b1",
+            "container_id": "4df982f85b41db7d4a2be547042bc9fefc7ca5365380ad10b45290fa3b313eb3",
+            "port": 8083
+        },
+        "f2915f62-5a36-4044-a218-75ad9fb23b6e": {
+            "model_name": "lera_api",
+            "model_id": "f2915f62-5a36-4044-a218-75ad9fb23b6e",
+            "container_id": "b6abc8352df82fc809079edc77dd98546f26e75b113076d23fc1c412ddab7487",
+            "port": 8084
+        },
+        "4d59220c-89cb-4da4-9e5d-17fad5df935e": {
+            "model_name": "lera_api",
+            "model_id": "4d59220c-89cb-4da4-9e5d-17fad5df935e",
+            "container_id": "9f490c3c9bde2aa9f7e1d6caf76fb445452b65a34d5c46a94747c8fac5b8e668",
+            "port": 8085
+        },
+        "96aaad9d-2c76-4014-8cfc-406632c5887b": {
+            "model_name": "lera_api",
+            "model_id": "96aaad9d-2c76-4014-8cfc-406632c5887b",
+            "container_id": "1023f11998434992e3813ef8b5a873e3c95d401c86067296f65cf11d86c0ee4a",
+            "port": 8086
+        }
+    }
+}

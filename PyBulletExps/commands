@@ -1,0 +1,13 @@
+conda activate pbullet
+
+python tasks_runner.py --config lra_test_gpt.json
+python tasks_runner.py --config ra_test_gpt.json
+python tasks_runner.py --config lera_test_llama_11b.json
+python tasks_runner.py --config lera_test_llama_90b.json
+python tasks_runner.py --config lera_test_gpt.json
+
+python tasks_runner.py --config baseline_test_gpt4o.json
+python tasks_runner.py --config baseline_test_gemini.json
+# Gemini lr / r
+python tasks_runner.py --config lra_test_gemini.json
+python tasks_runner.py --config ra_test_gemini.json

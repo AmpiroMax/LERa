@@ -1,0 +1,38 @@
+FROM pytorch/pytorch:2.0.0-cuda11.7-cudnn8-runtime
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y \
+    tree \
+    less \
+    vim \
+    curl \
+    wget \
+    build-essential \
+    python3-pip \
+    mesa-utils \
+    sudo \
+    && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+EXPOSE 8080
+
+WORKDIR /llserver
+COPY dev_requirements.txt .
+RUN pip install -r dev_requirements.txt
+
+COPY llserver/ llserver/
+
+COPY setup.py .
+RUN pip install .
+
+# ----- Model specific placeholders -----
+
+RUN cd llserver/models/lera_baseline && pip install -r lera_baseline_requirements.txt
+
+ENTRYPOINT ["python3", "/llserver/llserver/models/lera_baseline/server.py"]
+
+# ----- Model specific placeholders end -----

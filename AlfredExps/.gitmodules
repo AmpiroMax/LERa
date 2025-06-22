@@ -1,0 +1,3 @@
+[submodule "fiqa/perceivers/segformer/SegFormer"]
+	path = fiqa/perceivers/segformer/SegFormer
+	url = https://github.com/NVlabs/SegFormer.git
