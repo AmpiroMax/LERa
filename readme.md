@@ -6,7 +6,7 @@ A Visual Language Model-based replanning approach that utilizes visual feedback 
 > [Svyatoslav Pchelintsev*](https://github.com/)<sup>1</sup>, [Maxim Patratskiy*](https://github.com/)<sup>1</sup>, [Anatoly Onishchenko](https://github.com/)<sup>1</sup>, [Alexandr Korchemnyi](https://github.com/)<sup>1</sup>, [Aleksandr Medvedev](https://github.com/)<sup>2</sup>, [Uliana Vinogradova](https://github.com/)<sup>2</sup>, [Ilya Galuzinsky](https://github.com/)<sup>2</sup>, [Aleksey Postnikov](https://github.com/)<sup>2</sup>, [Alexey K. Kovalev](https://github.com/)<sup>1,3</sup>, [Aleksandr I. Panov](https://github.com/)<sup>1,3</sup>
 > MIPT<sup>1</sup>, Sberbank of Russia, Robotics Center<sup>2</sup>, AIRI<sup>3</sup>
 
-[\[📄Paper\]](https://arxiv.org/)  [\[🔥Project Page\]](#) [\[🚀 Quick Start\]](#-quick-start) [\[🤗 Model Zoo\]](#-model-zoo) [\[✅ Performance\]](#-performance) [\[🙋 FAQs\]](#-faqs)
+[\[📄Paper\]](https://arxiv.org/)  [\[🔥Project Page\]](#) [\[🚀 Quick Start\]](#-quick-start) [\[✅ Performance\]](#-performance)
 
 [\[🔥Installation\]](#-installation) [\[🚀 Experiments\]](#-experiments) [\[🎄Custom Tasks\]](#-custom-tasks)
 
