@@ -97,3 +97,6 @@ PyBulletExps/__pycache__/
 # llserver specific
 llserver/logs/
 llserver/__pycache__/ 
+
+# Tex files
+*.tex
