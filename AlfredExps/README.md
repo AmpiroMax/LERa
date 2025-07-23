@@ -14,10 +14,9 @@ AI2THOR 2.1.0
 ## Installation
 Clone the repository:
 ```
-git clone [link was deleted due to double blind review]
-cd eai_fiqa/
+cd AlfredExps/
 ```
-If you have `python3.8` (and can install potentially missing packages) on your server, you can safely ignore running a docker container. For those who haven't, we've prepared a docker image for the FIQA deployment. Build it, start a container, connect to it via ssh:
+If you have `python3.8` (and can install potentially missing packages) on your server, you can safely ignore running a docker container. For those who haven't, we've prepared a docker image for the Alfred deployment. Build it, start a container, connect to it via ssh:
 ```
 cd docker/
 ./build.sh
